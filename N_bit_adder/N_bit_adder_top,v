@@ -1,0 +1,27 @@
+module n_bit_adder #(parameter N = 8) (
+    input  [N-1:0] A,
+    input  [N-1:0] B,
+    input          cin,
+    output [N-1:0] Sum,
+    output         cout
+);
+    // Intermediate carry wires
+    wire [N:0] carry;
+    assign carry[0] = cin;
+    assign cout = carry[N];
+
+    // Generate block to instantiate N full adders
+    genvar i;
+    generate
+        for (i = 0; i < N; i = i + 1) begin : adder_gen
+            full_adder fa_inst (
+                .a(A[i]),
+                .b(B[i]),
+                .cin(carry[i]),
+                .sum(Sum[i]),
+                .cout(carry[i+1])
+            );
+        end
+    endgenerate
+
+endmodule
