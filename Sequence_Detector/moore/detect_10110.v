@@ -24,7 +24,7 @@ module seq_det_10110 (
             s2: nxt_st = in ? s3 : s0;
             s3: nxt_st = in ? s4 : s2;
             s4: nxt_st = in ? s1 : s5;
-            s5: nxt_st = in ? s1 : s2;
+            s5: nxt_st = in ? s3 : s0;
             default: nxt_st = s0;
         endcase
     end
