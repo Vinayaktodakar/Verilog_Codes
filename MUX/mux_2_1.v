@@ -1,6 +1,6 @@
 module mux_2_1(
-    input  logic sel, a, b, 
-    output logic out // Using 'logic' is standard in SystemVerilog
+    input   sel, a, b, 
+    output  out // Using 'logic' is standard in SystemVerilog
 );
 
     always_comb begin
