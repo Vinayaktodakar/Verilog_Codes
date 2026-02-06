@@ -1,3 +1,5 @@
+// while using with en first comment remove and add comment , same for monitor also 
+
 module tb;
   reg clk,rst,up_dn,en;
   wire [4:0] count;
